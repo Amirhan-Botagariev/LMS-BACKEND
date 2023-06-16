@@ -1,6 +1,11 @@
+from typing import TypeVar
+
 from sqlalchemy import MetaData, Integer, Table, Column, String, Boolean
 
 metadata = MetaData()
+
+UP = TypeVar("UP")
+ID = TypeVar("ID")
 
 user = Table(
     "user",
