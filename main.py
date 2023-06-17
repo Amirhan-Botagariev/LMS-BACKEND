@@ -1,7 +1,7 @@
 from fastapi import FastAPI, Depends
 from fastapi_users import FastAPIUsers
 
-import LoginOrSignUp
+from LoginOrSignUp import routerLogin
 from auth.auth import auth_backend
 from auth.database import User
 from auth.manager import get_user_manager
@@ -47,9 +47,11 @@ app.include_router(
 )
 
 app.include_router(
-    LoginOrSignUp.routerLogin,
-    prefix="/auth"
+    routerLogin,
+    prefix="/auto",
+    tags=["automate"]
 )
+
 
 @app.get("/")
 def read_root():
