@@ -64,8 +64,7 @@ app.include_router(
 
 app.include_router(
     LoginOrSignUp.routerLogin,
-    prefix="/loginOrSignUp",
-    tags=["loginOrSignUp"]
+    prefix="/auth"
 )
 
 

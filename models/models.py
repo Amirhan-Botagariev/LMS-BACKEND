@@ -1,12 +1,10 @@
 from typing import TypeVar
-
-from fastapi_users.models import UserProtocol
 from sqlalchemy import MetaData, Integer, Table, Column, String, Boolean
 
 metadata = MetaData()
 
+UP = TypeVar("UP")
 ID = TypeVar("ID")
-UP = TypeVar("UP", bound=UserProtocol)
 
 user = Table(
     "user",
